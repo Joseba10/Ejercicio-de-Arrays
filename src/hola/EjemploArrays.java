@@ -92,8 +92,9 @@ public class EjemploArrays {
 		 */
 		// Arrays.sort(arrayEnteros);
 
-		for (int i = 0; i < arrayEnteros.length - 1; i++)
-			for (int j = 0; j < arrayEnteros.length - i - 1; j++)
+		for (int i = 0; i < arrayEnteros.length - 1; i++) {
+			for (int j = 0; j < arrayEnteros.length - i - 1; j++) {
+
 				if (arrayEnteros[j] > arrayEnteros[j + 1]) {
 					int temp = arrayEnteros[j];
 					arrayEnteros[j] = arrayEnteros[j + 1]; // La posicion actual se queda con el numero siguiente que
@@ -102,6 +103,8 @@ public class EjemploArrays {
 												// actual
 
 				}
+			}
+		}
 		return arrayEnteros;
 	}
 
