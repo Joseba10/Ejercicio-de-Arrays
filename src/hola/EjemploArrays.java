@@ -61,8 +61,7 @@ public class EjemploArrays {
 	public static int buscarElementoArrayBusquedaLineal(int[] arrayEnterosSinOrdenar, int elementoBuscar) {
 
 		int posicion = -1;
-		// indexof()
-
+	
 		boolean encontrado = false;
 		int i = 0;
 		while ((i < arrayEnterosSinOrdenar.length) && (!encontrado)) {
@@ -93,7 +92,7 @@ public class EjemploArrays {
 		// Arrays.sort(arrayEnteros);
 
 		for (int i = 0; i < arrayEnteros.length - 1; i++) {
-			for (int j = 0; j < arrayEnteros.length - i - 1; j++) {
+			for (int j = 0; j < arrayEnteros.length - 1; j++) { //Si no pones el 1 te sales del array
 
 				if (arrayEnteros[j] > arrayEnteros[j + 1]) {
 					int temp = arrayEnteros[j];
