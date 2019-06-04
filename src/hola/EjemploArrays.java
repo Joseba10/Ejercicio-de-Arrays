@@ -37,8 +37,7 @@ public class EjemploArrays {
 				.recogerEnteroTeclado("Introduzca el valor a buscar (búsqueda binaria) en el array ordenado: ");
 		posicionArray = buscarElementoArrayOrdenadoBusquedaBinaria(arrayOrdenadoEnterosAleatorios, elementoBuscar);
 		System.out.println("La posicion del elemento en el array es: " + posicionArray);
-		
-		
+
 	}
 
 	public static int[] generarArrayEnterosAleatorios(int longitud, int valorMaximo) {
@@ -91,8 +90,18 @@ public class EjemploArrays {
 		 * entre los dos metodos es que sort solo funciona con un hilo y ParallelSort
 		 * con multiples lo que hace que sea mas veloz
 		 */
-		Arrays.sort(arrayEnteros);
+		// Arrays.sort(arrayEnteros);
 
+		for (int i = 0; i < arrayEnteros.length - 1; i++)
+			for (int j = 0; j < arrayEnteros.length - i - 1; j++)
+				if (arrayEnteros[j] > arrayEnteros[j + 1]) {
+					int temp = arrayEnteros[j];
+					arrayEnteros[j] = arrayEnteros[j + 1]; // La posicion actual se queda con el numero siguiente que
+															// esta ubicado en la siguiente posicion del array
+					arrayEnteros[j + 1] = temp; // El valor del proximo elemento del array se queda en la posicion
+												// actual
+
+				}
 		return arrayEnteros;
 	}
 
@@ -122,14 +131,8 @@ public class EjemploArrays {
 
 		return busqueda_binaria;
 	}
-	
-	
-	
-	/*************Otras formas******************/
-	
-	
-	
-	
+
+	/************* Otras formas ******************/
 
 	public static int buscarElementoArrayBusquedaLinealBueno(int[] arrayEnterosSinOrdenar, int elementoBuscar) {
 		int posicion = -1;
