@@ -124,7 +124,7 @@ public class EjemploArrays {
 		return posicion;
 	}
 
-	public static int buscarElementoArrayOrdenadoBusquedaBinaria(int[] arrayEnterosSinOrdenar, int elementoBuscar) {
+	public static int buscarElementoArrayOrdenadoBusquedaBinaria(int[] arrayEnterosOrdenados, int elementoBuscar) {
 
 		// Dentro de los arrays hay un metodo llamado binarySearch,su funcion es buscar
 		// el elemento introducido dentro del array existente
@@ -135,12 +135,12 @@ public class EjemploArrays {
 		int primero,ultimo,valorCentro;
 		
 		primero=0;
-		ultimo= arrayEnterosSinOrdenar.length-1;
+		ultimo= arrayEnterosOrdenados.length-1;
 		
 		while(primero<=ultimo) {
 			
 			centro= (primero+ultimo)/2;
-			valorCentro= arrayEnterosSinOrdenar[centro];
+			valorCentro= arrayEnterosOrdenados[centro];
 			
 			if(valorCentro==elementoBuscar) {
 				
