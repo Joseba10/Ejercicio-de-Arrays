@@ -129,9 +129,34 @@ public class EjemploArrays {
 		// Dentro de los arrays hay un metodo llamado binarySearch,su funcion es buscar
 		// el elemento introducido dentro del array existente
 
-		int busqueda_binaria = Arrays.binarySearch(arrayEnterosSinOrdenar, elementoBuscar);
+		//int busqueda_binaria = Arrays.binarySearch(arrayEnterosSinOrdenar, elementoBuscar);
+		
+		int centro = 0;
+		int primero,ultimo,valorCentro;
+		
+		primero=0;
+		ultimo= arrayEnterosSinOrdenar.length-1;
+		
+		while(primero<=ultimo) {
+			
+			centro= (primero+ultimo)/2;
+			valorCentro= arrayEnterosSinOrdenar[centro];
+			
+			if(valorCentro==elementoBuscar) {
+				
+				return centro;
+			}
+			else if(elementoBuscar<valorCentro){
+			ultimo=centro-1;	//Nos movemos hacia izquierda
+				
+			}else{ //elementoBuscar>valorCentro
+				primero=centro+1; //Nos movemos hacia derecha
+			}
+			
+		}
+		return centro;
 
-		return busqueda_binaria;
+		
 	}
 
 	/************* Otras formas ******************/
