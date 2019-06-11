@@ -61,7 +61,7 @@ public class EjemploArrays {
 	public static int buscarElementoArrayBusquedaLineal(int[] arrayEnterosSinOrdenar, int elementoBuscar) {
 
 		int posicion = -1;
-	
+
 		boolean encontrado = false;
 		int i = 0;
 		while ((i < arrayEnterosSinOrdenar.length) && (!encontrado)) {
@@ -92,7 +92,7 @@ public class EjemploArrays {
 		// Arrays.sort(arrayEnteros);
 
 		for (int i = 0; i < arrayEnteros.length - 1; i++) {
-			for (int j = 0; j < arrayEnteros.length - 1; j++) { //Si no pones el 1 te sales del array
+			for (int j = 0; j < arrayEnteros.length - 1; j++) { // Si no pones el 1 te sales del array
 
 				if (arrayEnteros[j] > arrayEnteros[j + 1]) {
 					int temp = arrayEnteros[j];
@@ -129,34 +129,33 @@ public class EjemploArrays {
 		// Dentro de los arrays hay un metodo llamado binarySearch,su funcion es buscar
 		// el elemento introducido dentro del array existente
 
-		//int busqueda_binaria = Arrays.binarySearch(arrayEnterosSinOrdenar, elementoBuscar);
-		
-		int centro = 0;
-		int primero,ultimo,valorCentro;
-		
-		primero=0;
-		ultimo= arrayEnterosOrdenados.length-1;
-		
-		while(primero<=ultimo) {
-			
-			centro= (primero+ultimo)/2;
-			valorCentro= arrayEnterosOrdenados[centro];
-			
-			if(valorCentro==elementoBuscar) {
-				
-				return centro;
-			}
-			else if(elementoBuscar<valorCentro){
-			ultimo=centro-1;	//Nos movemos hacia izquierda
-				
-			}else{ //elementoBuscar>valorCentro
-				primero=centro+1; //Nos movemos hacia derecha
-			}
-			
-		}
-		return centro;
+		// int busqueda_binaria = Arrays.binarySearch(arrayEnterosSinOrdenar,
+		// elementoBuscar);
 
-		
+		int centro = 0;
+		int primero, ultimo, valorCentro;
+
+		primero = 0;
+		ultimo = arrayEnterosOrdenados.length - 1;
+		boolean encontrado = false;
+		int posicion = -1;
+		while (primero <= ultimo && !encontrado) {
+
+			centro = (primero + ultimo) / 2;
+			valorCentro = arrayEnterosOrdenados[centro];
+
+			if (valorCentro == elementoBuscar) {
+				posicion = centro;
+				encontrado = true;
+			} else if (elementoBuscar < valorCentro) {
+				ultimo = centro - 1; // Nos movemos hacia izquierda
+			} else { // elementoBuscar>valorCentro
+				primero = centro + 1; // Nos movemos hacia derecha
+			}
+
+		}
+		return posicion;
+
 	}
 
 	/************* Otras formas ******************/
